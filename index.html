@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Умная система</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+  <div class="container"> 
+    <div class="wr_flex">
+
+      <div class="top_l">
+        <img src="1.png" alt="alt" class="desc_hidden">
+      </div>
+
+      <div class="top_r">
+        <section class="smart-trade-block">
+          <div class="container">
+            <h1>
+              Умная система от<br>
+              <span class="highlight">Facebook</span> для простого
+              заработка
+            </h1>
+
+            <img src="1.png" alt="alt" class="mob_hidden">
+        
+            <p class="subtitle">
+              Откройте для себя новый способ заработка от 300 евро<br>
+              благодаря <span class="blue">автоматической торговле</span> от Meta
+            </p>
+        
+            <a href="#" class="reg-button fbp-btn">
+              РЕГИСТРАЦИЯ
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>  
+
+<div class="container">
+
+  <div class="scale-wrapper">
+    <div class="bubble" id="bubble">200€ в день</div>
+
+    <div class="scale" id="scale">
+      <div class="tick big"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick big"></div>
+    </div>
+
+    <div class="labels">
+      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+      <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+    </div>
+    <input type="range" id="range" min="1" max="12" step="1" value="1">
+  </div>
+
+  <p class="sub_input">
+    От того, сколько времени вы пользуетесь Facebook, зависит ваш заработок на платформе в день
+  </p>
+
+</div>
+
+<div class="container">
+  <h2>Как работает система заработка?</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <div class="step-title">Регистрация</div>
+      <div class="step-text">
+        Пройдите регистрацию и получите доступ к платформе
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">2</div>
+      <div class="step-title">Активация</div>
+      <div class="step-text">
+        Включите вашу программу по заработку и начните получать прибыль с акций
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">3</div>
+      <div class="step-title">Заработок</div>
+      <div class="step-text">
+        Зарабатывайте больше с каждым днём, проводя на платформе Facebook
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  
+  <div class="wr_flex a_center">
+
+    <div class="l">
+      
+      <div class="fbp-section">
+        <div class="fbp-title">
+          Ваш <span class="fbp-title-blue">заработок</span> на акциях<br>
+          <span class="fbp-title-underline">растёт с каждым днём</span> на платформе <span class="fbp-title-blue">Facebook!</span>
+        </div>
+      
+        <div class="fbp-steps">
+          <div class="fbp-step">
+            <span class="fbp-step-title">1. Простой интерфейс</span><br>
+            Управляйте компьютером теперь так же легко, как листать Facebook.
+          </div>
+      
+          <div class="fbp-step">
+            <span class="fbp-step-title">2. Экономия времени</span><br>
+            Система работает 24/7, чтобы вы могли сосредоточиться на своих делах.
+          </div>
+      
+          <div class="fbp-step">
+            <span class="fbp-step-title">3. Полностью автоматизированный процесс</span><br>
+            Система анализирует рынок, выбирает сделки и зарабатывает за вас.
+          </div>
+        </div>
+      
+        <button class="fbp-btn">РЕГИСТРАЦИЯ</button>
+      </div>
+      
+
+    </div>
+
+    <div class="r">
+      <img src="video_gif.gif" alt="alt">
+    </div>
+  </div>
+  
+</div>
+
+
+<script>
+  const range = document.getElementById('range');
+  const bubble = document.getElementById('bubble');
+  const scale = document.getElementById('scale');
+
+  const min = +range.min;
+  const max = +range.max;
+
+  function update() {
+    const value = +range.value;
+
+    // меняем текст
+    const amount = value * 200; // например 50€ за шаг
+    bubble.textContent = amount + "€ в день";
+
+    // двигаем пузырёк
+    const percent = (value - min) / (max - min);
+    const scaleWidth = scale.offsetWidth;
+    const bubbleWidth = bubble.offsetWidth;
+
+    const x = percent * (scaleWidth - bubbleWidth);
+    // bubble.style.transform = `translateX(${x}px)`;
+  }
+
+  range.addEventListener('input', update);
+
+  update();
+</script>
+
+
+<div class="fbp-popup-overlay" id="fbpPopup">
+  <div class="fbp-popup">
+    <div class="fbp-popup-close" id="fbpPopupClose">×</div>
+
+
+    <div class="popup-wrapper">
+      <div class="form-container">
+    
+        <h2>Поздравляем! Вы получаете доступ к заработку от 350€</h2>
+    
+        <p>Заполните форму с почтой и номером телефона чтобы<br>получить первую прибыль уже сегодня</p>
+    
+        <form>
+          <div class="input-group">
+            <label>Имя</label>
+            <input type="text" placeholder="Имя">
+          </div>
+    
+          <div class="input-group">
+            <label>Фамилия</label>
+            <input type="text" placeholder="Фамилия">
+          </div>
+    
+          <div class="input-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="E-mail">
+          </div>
+    
+          <div class="input-group">
+            <label>Номер телефона</label>
+            <input type="tel" placeholder="+355 66 123 4567" value="+355 66 123 4567">
+          </div>
+    
+          <button type="submit">РЕГИСТРАЦИЯ</button>
+        </form>
+    
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  const fbpBtn = document.querySelector('.fbp-btn');
+  const fbpPopup = document.getElementById('fbpPopup');
+  const fbpPopupClose = document.getElementById('fbpPopupClose');
+
+  fbpBtn.addEventListener('click', () => {
+    fbpPopup.classList.add('fbp-active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  fbpPopupClose.addEventListener('click', closePopup);
+  fbpPopup.addEventListener('click', (e) => {
+    if (e.target === fbpPopup) closePopup();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePopup();
+  });
+
+  function closePopup() {
+    fbpPopup.classList.remove('fbp-active');
+    document.body.style.overflow = '';
+  }
+</script>
+
+
+
+
+</body>
+</html>
+
+
+
