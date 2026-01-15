@@ -220,17 +220,27 @@
 </div>
 
 
-<script>
-  const fbpBtn = document.querySelector('.fbp-btn');
+  <script>
   const fbpPopup = document.getElementById('fbpPopup');
   const fbpPopupClose = document.getElementById('fbpPopupClose');
 
-  fbpBtn.addEventListener('click', () => {
-    fbpPopup.classList.add('fbp-active');
-    document.body.style.overflow = 'hidden';
+  // все кнопки с классом .fbp-btn
+  const fbpButtons = document.querySelectorAll('.fbp-btn');
+
+  fbpButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      fbpPopup.classList.add('fbp-active');
+      document.body.style.overflow = 'hidden';
+    });
   });
 
+  function closePopup() {
+    fbpPopup.classList.remove('fbp-active');
+    document.body.style.overflow = '';
+  }
+
   fbpPopupClose.addEventListener('click', closePopup);
+
   fbpPopup.addEventListener('click', (e) => {
     if (e.target === fbpPopup) closePopup();
   });
@@ -238,11 +248,6 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closePopup();
   });
-
-  function closePopup() {
-    fbpPopup.classList.remove('fbp-active');
-    document.body.style.overflow = '';
-  }
 </script>
 
 
